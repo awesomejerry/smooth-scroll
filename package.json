@@ -1,0 +1,23 @@
+{
+  "name": "smooth-scroll-to",
+  "version": "1.0.0",
+  "description": "A simple module for smoothly scrolling to a element",
+  "main": "index.js",
+  "scripts": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/awesomejerry/smooth-scroll-to.git"
+  },
+  "keywords": [
+    "smooth",
+    "scroll"
+  ],
+  "author": "awesomejerry",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/awesomejerry/smooth-scroll-to/issues"
+  },
+  "homepage": "https://github.com/awesomejerry/smooth-scroll-to#readme"
+}
