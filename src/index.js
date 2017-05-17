@@ -17,19 +17,29 @@ export default function smoothScrollTo(node, endScrollTop) {
     let lastScrollTop;
     if (direction === 'up') {
       lastScrollTop = n.scrollTop;
-      n.scrollTop -= step;
-      if (n.scrollTop === lastScrollTop) {
+      if (lastScrollTop - endScrollTop < step) {
+        n.scrollTop = endScrollTop;
         needScroll = false;
-      } else if (n.scrollTop > endScrollTop) {
-        needScroll = true;
+      } else {
+        n.scrollTop -= step;
+        if (n.scrollTop === lastScrollTop) {
+          needScroll = false;
+        } else if (n.scrollTop > endScrollTop) {
+          needScroll = true;
+        }
       }
     } else {
       lastScrollTop = n.scrollTop;
-      n.scrollTop += step;
-      if (n.scrollTop === lastScrollTop) {
+      if (endScrollTop - lastScrollTop < step) {
+        n.scrollTop = endScrollTop;
         needScroll = false;
-      } else if (n.scrollTop < endScrollTop) {
-        needScroll = true;
+      } else {
+        n.scrollTop += step;
+        if (n.scrollTop === lastScrollTop) {
+          needScroll = false;
+        } else if (n.scrollTop < endScrollTop) {
+          needScroll = true;
+        }
       }
     }
 
